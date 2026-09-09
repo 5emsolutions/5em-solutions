@@ -1,3 +1,12 @@
+# ---------------------------------------------------------------------------
+# Preview deployments only.
+# This pattern matches the *.pages.dev host and nothing else, so it can never
+# follow the site onto the real domain and accidentally deindex production.
+# Verified against Cloudflare's _headers docs: host placeholders are delimited
+# by "." so :project matches exactly one label.
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex, nofollow
+
 # Cloudflare Pages caching rules. GitHub Pages ignores this file harmlessly.
 /images/*
   Cache-Control: public, max-age=31536000, immutable

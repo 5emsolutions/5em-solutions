@@ -28,6 +28,19 @@ The first is what people read. The second is what the phone dials. On macOS use
 
 Same pattern for the address or hours — search for the current text, replace it.
 
+## Sending a client preview
+
+Deploy the **`mde/` folder only**, never the repo root — the root is the 5EM
+Solutions site. Cloudflare Pages: set the build command empty and the build
+output directory to `mde`.
+
+`_headers` carries a `noindex` rule scoped to `*.pages.dev`, so a preview
+cannot be picked up by Google. It matches on hostname only and does not apply
+to a custom domain, so it is safe to leave in place forever.
+
+Keep internal notes out of the deploy folder. Anything inside `mde/` is served
+publicly once deployed.
+
 ## Prepare a photo before adding it
 
 `tools/prep-photos.py` is a one-off helper, not a build step — the site itself

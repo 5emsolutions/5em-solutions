@@ -402,6 +402,29 @@ select:focus-visible, textarea:focus-visible, summary:focus-visible{
 }
 .shot figcaption{ font-size:.95rem; color: var(--ink-soft); }
 
+/* Designed stand-in for a photo that is not in /images/ yet. Applied by
+   script.js only when an image genuinely fails to load. */
+[data-empty="true"] > img{ visibility: hidden; }
+[data-empty="true"]::after{
+  content: attr(data-label);
+  position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:center;
+  padding: 18px; text-align:center;
+  font-size:.78rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase;
+  line-height:1.5; color: var(--ink-mute);
+  background:
+    repeating-linear-gradient(45deg, transparent, transparent 14px,
+      rgba(28,25,23,.045) 14px, rgba(28,25,23,.045) 28px),
+    var(--surface-2);
+}
+.hero__media[data-empty="true"]::after{
+  color:#9A9086;
+  background:
+    repeating-linear-gradient(45deg, transparent, transparent 16px,
+      rgba(255,255,255,.035) 16px, rgba(255,255,255,.035) 32px),
+    #2B2825;
+}
+
 .placeholder{
   border: 2px dashed var(--line-2);
   background: repeating-linear-gradient(45deg, var(--surface-2), var(--surface-2) 12px, #EDE6DC 12px, #EDE6DC 24px);

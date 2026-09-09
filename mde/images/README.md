@@ -9,6 +9,30 @@ bigger and the site stops loading in under 1.5 seconds on a phone.
 
 ---
 
+## Until the photos arrive
+
+Every image slot that has no file shows a designed "photo coming" panel in the
+site's own colours, labelled with what belongs there — not a broken-image icon.
+It is automatic. Drop a file in with the right name and the panel disappears.
+Nothing to switch off.
+
+**If you want stand-in photos in the meantime**, just save any JPG into this
+folder under the filename from the table below and it appears immediately.
+Pexels, Unsplash and Pixabay are free for commercial use with no attribution
+required; check the licence on the individual photo before using it.
+
+Two things not to do:
+
+- **Do not put stock photos on `projects.html`.** That page says "our own jobs"
+  and "no stock photos, no other company's jobs". Another contractor's deck
+  presented as MDE's work is the kind of thing a competitor screenshots. Leave
+  the panels — they read as honest.
+- **Do not use stock as the hero long-term.** The hero is the first thing a
+  homeowner sees and a generic house photo says nothing MDE's own porch rebuild
+  would not say better.
+
+---
+
 ## 1. Photos the site is already wired for
 
 These thirteen are the ones referenced in the brief. Until the files are here,

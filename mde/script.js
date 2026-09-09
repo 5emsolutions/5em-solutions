@@ -38,6 +38,40 @@ var FALLBACK_PHONE = "(252) 904-0956";
     });
   }
 
+  /* ------------------------------------------------- missing photo slots */
+  /* Until the real job photos are dropped into /images/, show a designed
+     "photo coming" panel instead of a browser broken-image icon. Does nothing
+     once the files exist — no config, no cleanup needed. */
+  function markEmpty(img) {
+    var frame = img.parentNode;
+    if (!frame || frame.getAttribute("data-empty") === "true") return;
+    var fig = frame.parentNode;
+    var step = fig ? fig.querySelector(".shot__step") : null;
+    frame.setAttribute("data-empty", "true");
+    frame.setAttribute("data-label", step ? step.textContent : "Photo coming");
+  }
+
+  function checkPhotos() {
+    var imgs = document.querySelectorAll(".shot__frame img, .hero__media img");
+    for (var i = 0; i < imgs.length; i++) {
+      if (imgs[i].complete && imgs[i].naturalWidth === 0) markEmpty(imgs[i]);
+    }
+  }
+
+  // Images that fail after this script runs. The error event does not bubble,
+  // so listen in the capture phase.
+  document.addEventListener(
+    "error",
+    function (e) {
+      var t = e.target;
+      if (t && t.tagName === "IMG") markEmpty(t);
+    },
+    true
+  );
+  // And images that already failed before it ran.
+  checkPhotos();
+  window.addEventListener("load", checkPhotos);
+
   /* ---------------------------------------------------------- quote form */
   var form = document.getElementById("quote-form");
   if (!form) return;

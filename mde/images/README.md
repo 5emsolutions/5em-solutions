@@ -105,6 +105,33 @@ Worth doing: a town on a project is a local-search signal that "Eastern NC" is n
 
 ---
 
+## OPEN ITEM — the three photos on the site are thumbnails
+
+`project-01`, `project-02` and `project-13` are in place but they are only
+**261px** on the long edge. The hero alone renders at 977px wide on a desktop,
+so it is being upscaled almost 4x and looks soft. These are not launch quality.
+
+Replace them with the camera originals before the site goes live. Same
+filenames, no code changes:
+
+| Slot | Have | Need |
+|---|---|---|
+| `project-01.jpg` (hero) | 261 x 435 | 2000 x 1500 |
+| `project-02.jpg` | 261 x 186 | 1600 x 1200 |
+| `project-13.jpg` | 261 x 261 | 1600 x 1200 |
+
+Getting the originals off a phone: AirDrop, or Google Photos share with
+**"Original"** quality selected, or email choosing **"Actual Size"**. Do not
+text them and do not screenshot them — both re-compress down to roughly what
+is here now.
+
+One thing to redo when the real hero lands: `styles.css` has
+`object-position: center 42%` on `.hero__media img`, tuned to keep the porch in
+frame on this portrait photo. A landscape hero will want it back near
+`center 55%`.
+
+---
+
 ## 2. Photos still needed
 
 Ranked by how much each one earns.

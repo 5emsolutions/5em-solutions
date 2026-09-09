@@ -116,9 +116,10 @@ Google Search Console, and put the domain on the Google Business Profile.
    copy-paste template in the HTML comments. Delete the orange "Site owner" notice
    when done.
 4. **Add the town labels** to `projects.html` (see `images/README.md`).
-5. **Drop in the photos.** Slots with no file show a designed "photo coming"
-   panel automatically, so nothing looks broken in the meantime — but real
-   photos are the single biggest lift available to this site.
+5. **Replace the three thumbnail photos.** `project-01`, `project-02` and
+   `project-13` are on the site but are only 261px wide — the hero is upscaled
+   almost 4x and looks soft. Camera originals, same filenames. Remaining empty
+   slots show a designed "photo coming" panel, so nothing looks broken.
 
 Deliberately **not** on the site: no licence number (none was supplied), no email
 address (none was supplied — there is a marked comment in `contact.html` showing

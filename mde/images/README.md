@@ -116,9 +116,14 @@ filenames, no code changes:
 
 | Slot | Have | Need |
 |---|---|---|
-| `project-01.jpg` (hero) | 261 x 435 | 2000 x 1500 |
+| `project-01.jpg` (hero) | 261 x 435, resampled up to 1000 x 1667 | 2000 x 1500 |
 | `project-02.jpg` | 261 x 186 | 1600 x 1200 |
 | `project-13.jpg` | 261 x 261 | 1600 x 1200 |
+
+The hero file has been resampled up from the 261px original with Lanczos and
+an unsharp mask, which is why it holds together better than a browser's own
+upscale would. It is still a 261px photo underneath. There is no detail in
+it to recover — only the real file fixes that.
 
 Getting the originals off a phone: AirDrop, or Google Photos share with
 **"Original"** quality selected, or email choosing **"Actual Size"**. Do not

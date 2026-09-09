@@ -280,6 +280,15 @@ select:focus-visible, textarea:focus-visible, summary:focus-visible{
      nothing left to crop. */
   .hero__grid{ min-height: 520px; }
   .hero__media{ position:relative; overflow:hidden; }
+  /* Blend the photo into the dark copy panel instead of butting them together
+     with a hard vertical seam. */
+  .hero__media::before{
+    content:""; position:absolute; inset:0; z-index:1; pointer-events:none;
+    background: linear-gradient(90deg,
+      var(--deep) 0%, rgba(34,32,29,.72) 6%, rgba(34,32,29,.28) 16%, rgba(34,32,29,0) 30%);
+  }
+  /* No photo in place: let the "photo coming" panel show unblended. */
+  .hero__media[data-empty="true"]::before{ display:none; }
   .hero__media img{ position:absolute; inset:0; width:100%; height:100%; }
   .hero__media{ margin-left: 0; margin-right: calc(50% - 50vw); }
 }

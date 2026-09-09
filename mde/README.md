@@ -28,6 +28,20 @@ The first is what people read. The second is what the phone dials. On macOS use
 
 Same pattern for the address or hours — search for the current text, replace it.
 
+## Prepare a photo before adding it
+
+`tools/prep-photos.py` is a one-off helper, not a build step — the site itself
+still has none. It resizes to the right dimensions, compresses under the size
+ceiling, rotates phone photos upright, reads HEIC, and strips all metadata
+including the GPS coordinates of the customer's house.
+
+```bash
+pip install pillow pillow-heif
+python3 tools/prep-photos.py ~/Desktop/porch.HEIC --as project-01
+```
+
+Skip it if you would rather resize by hand — but do strip the location data.
+
 ## Add a gallery photo
 
 1. Save the JPG into `images/` (see `images/README.md` for names and sizes).

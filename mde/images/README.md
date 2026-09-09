@@ -3,6 +3,24 @@
 Every photo the site expects lives in this folder. Filenames are fixed — drop a
 file in with the right name and it appears on the site. No code changes.
 
+**Quickest path:** upload the photos to GitHub under any filenames at all and
+ask Claude to place them. Or run them through `tools/prep-photos.py`, which
+resizes, compresses, rotates them upright and strips GPS in one go:
+
+```bash
+pip install pillow pillow-heif          # once
+python3 tools/prep-photos.py ~/Desktop/porch.HEIC ~/Desktop/deck.jpg \
+    --as project-01 project-02
+```
+
+It reads HEIC straight off an iPhone. Hand-preparing files to the spec below is
+only necessary if you would rather not use it.
+
+**Strip the GPS.** Every photo taken on a phone at a job site carries the
+customer's home coordinates in its metadata. Publishing that is not acceptable.
+`tools/prep-photos.py` removes it; if you prepare files by hand, remove it
+yourself (macOS Preview: Tools > Show Inspector > GPS > Remove Location Info).
+
 **Format:** JPG. **Colour:** sRGB. **Quality:** 80. Keep every file under 400 KB;
 a 1600px-wide JPG at quality 80 usually lands around 250 KB. Anything much
 bigger and the site stops loading in under 1.5 seconds on a phone.
